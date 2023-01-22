@@ -1,0 +1,27 @@
+<div id="<%= dom_id song %>">
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Name:</strong>
+    <%= song.name %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Length:</strong>
+    <%= song.length %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Genre:</strong>
+    <%= link_to song.genre.name, song.genre, class: "color-skyblue-500 underline" %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Album:</strong>
+    <%= link_to song.album.name, song.album, class: "color-skyblue-500 underline" %>
+  </p>
+
+  <% if action_name != "show" %>
+    <%= link_to "Show this song", song, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to 'Edit this song', edit_song_path(song), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <hr class="mt-6">
+  <% end %>
+</div>
